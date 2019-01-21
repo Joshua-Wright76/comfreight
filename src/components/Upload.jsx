@@ -7,11 +7,10 @@ class Upload extends Component {
             wireTransferNeeded: 0,
             totalInvoiceAmount: 0,
             invoiceChangeHandler: e => {
-                this.state.totalInvoiceAmount = e.target.value
-                this.state.wireTransferNeeded = this.state.totalInvoiceAmount - 25
+                this.setState({wireTransferNeeded: Math.round(e.target.value * 0.03)})
                 console.log(this.state.wireTransferNeeded);
             }
-        }  
+        }
     }
     render(){
         return (
